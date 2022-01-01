@@ -1,6 +1,6 @@
 import Ciseau from './images/cisseaux.png';
 import feuille from './images/feuille.png';
-import pierre from './images/pierre.jpg';
+import pierre from './images/pierre1.png';
 import './App.css';
 import { useState } from "react";
 
