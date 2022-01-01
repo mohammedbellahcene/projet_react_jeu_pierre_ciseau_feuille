@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.App,.jeucontainer,.joueur,.ordinateur{
+  display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  row-gap: 50px;
+}
+.jeucontainer,.joueur,.ordinateur{
+  row-gap: 20px;
+  color:white;
+
+}
+.App-header {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+
+  background-color: #282c34;
+  width: 100%;
+  height: 100px;
   color: white;
+  font-size: 1.5rem;
+
+}
+.jeucontainer{
+  width: 75%;
+  height: 75vh;
+  background-color: #282c34;
+  font-size: 1.5rem;
+}
+.affichageresultat{
+  display: flex;
+  column-gap: 20px;
+}
+.imagechoix{
+  width: 300px;
+  height:300px;
+  background-color:orange;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+}
+.choixjoueur{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  column-gap: 50px;
+}
+.imagechoix img{
+  object-fit:cover;
+  width: 100%;
+  height: 100%;
+}
+button{
+  font-size: 1.5rem;
+
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
