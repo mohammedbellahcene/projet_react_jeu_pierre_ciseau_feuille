@@ -38,7 +38,7 @@ function App() {
       <div className='jeucontainer'>
       <div className='choixjoueur'>
           <button onClick={()=>{gamerChoice=0;pcChoice=getRandomInt(3); setgamerChoice1(gamerChoice); setpcChoice1(pcChoice);if (gamerChoice===pcChoice)
-        setresultat("egalité");
+        setresultat("Egalité");
     else if ((gamerChoice===0 && pcChoice===2) || (gamerChoice===1 && pcChoice===0) || (gamerChoice===2 && pcChoice===1))
       {
       setresultat("Le joueur gagne");
@@ -47,11 +47,11 @@ function App() {
       }
     else
     {
-      setresultat("Le pc gagne");
+      setresultat("L'ordinateur gagne");
       setscorePc(scorePc+1);
     }}}>Pierre</button>
           <button onClick={()=>{gamerChoice=1;pcChoice=getRandomInt(3);setgamerChoice1(gamerChoice); setpcChoice1(pcChoice); if (gamerChoice===pcChoice)
-        setresultat("egalité");
+        setresultat("Egalité");
     else if ((gamerChoice===0 && pcChoice===2) || (gamerChoice===1 && pcChoice===0) || (gamerChoice===2 && pcChoice===1))
       {
       setresultat("Le joueur gagne");
@@ -60,13 +60,13 @@ function App() {
       }
     else
     {
-      setresultat("Le pc gagne");
+      setresultat("L'ordinateur gagne");
       setscorePc(scorePc+1);
     }}}>Feuille</button>
 
           <button onClick={()=>{gamerChoice=2;pcChoice=getRandomInt(3); setgamerChoice1(gamerChoice); setpcChoice1(pcChoice);
           if (gamerChoice===pcChoice)
-               setresultat("egalité");
+               setresultat("Egalité");
           else if ((gamerChoice===0 && pcChoice===2) || (gamerChoice===1 && pcChoice===0) || (gamerChoice===2 && pcChoice===1))
               {
                 setresultat("Le joueur gagne");
@@ -75,7 +75,7 @@ function App() {
               }
           else
               {
-                setresultat("Le pc gagne");
+                setresultat("L'ordinateur gagne");
                 setscorePc(scorePc+1);
               }}}>Ciseau</button>
 
@@ -86,7 +86,7 @@ function App() {
             <div className='joueur'>
             <div>{scoreJoueur}</div>
             <div >Joueur</div>
-            <div className='imagechoix'><img className='' src={(gamerChoice1===0)? pierre:(gamerChoice1===1)? feuille:Ciseau } alt="Ciseau" /></div>
+            <div className='imagechoix'><img className='' src={(gamerChoice1===0)? pierre:(gamerChoice1===1)? feuille:(gamerChoice1===2)? Ciseau : null   } alt="" /></div>
             
 
 
@@ -95,7 +95,7 @@ function App() {
 
             <div>{scorePc}</div>
             <div >Ordinateur</div>
-            <div className='imagechoix'><img className='' src={(pcChoice1===0)? pierre:(pcChoice1===1)? feuille:Ciseau } alt="Ciseau" /></div>
+            <div className='imagechoix'><img className='' src={(pcChoice1===0)? pierre:(pcChoice1===1)? feuille:(pcChoice1===2)? Ciseau : null } alt="" /></div>
 
           </div>
 
@@ -103,6 +103,7 @@ function App() {
        
         <div className='resultat'>
          {resultat}
+         <button className='reset' onClick={()=>{setscorePc(0);setscoreJoueur(0);setresultat("");setgamerChoice1(-1);setpcChoice1(-1)}}>Reset</button>
 
         </div>
         
